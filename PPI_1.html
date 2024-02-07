@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PPI Calculator</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial">
+
+  <script>
+    function cal(){
+      var a = parseInt(document.getElementById("px_width").value)
+      var b = parseInt(document.getElementById("px_height").value)
+      var c = parseFloat(document.getElementById("size").value)
+      var ppi = Math.sqrt((Math.pow(a,2)+Math.pow(b,2)))/c
+      document.getElementById("disp").innerHTML=Math.round(ppi)+" PPI"
+    }
+  </script>
+</head>
+<body style="margin-top: 1px; font-family: 'Lucida Grande', tahoma,verdana,arial,sans-serif ">
+<center><img src="img/gif_1.gif" height="500px" width="700px" class="img-fluid" style="min-height: 50%; min-width: 50%"/></center>
+<div class="container">
+  <h1 class="text-center">PPI CALCULATOR</h1>
+  <br>
+  <form id="ppiForm">
+    <center>
+    <input type="text" style="width: 700px;height: 50px; border-radius: 5px" placeholder="Pixel Width" id="px_width" class="form-control">
+    <br>
+    <input type="text" style="width: 700px; height: 50px; border-radius: 5px" placeholder="Pixel Height" id="px_height" class="form-control">
+    <br>
+    <input type="text" style="width: 700px; height: 50px; border-radius: 5px" placeholder="Screen Size" id="size" class="form-control">
+    <br>
+    <button onclick="cal()" type="button" class=" btn btn-primary">Calculate</button>
+    </center>
+  </form>
+</div>
+  <p id="disp"></p>
+
+</body>
+</html>
